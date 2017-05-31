@@ -4,11 +4,11 @@ PKG             := qtbase
 $(PKG)_WEBSITE  := https://www.qt.io/
 $(PKG)_DESCR    := Qt
 $(PKG)_IGNORE   :=
-$(PKG)_VERSION  := 5.8.0
-$(PKG)_CHECKSUM := c17111ae02a44dc7be1ec2cf979a47ee9e58edf4904041a525c21f4fa53fc005
+$(PKG)_VERSION  := 5.5.1
+$(PKG)_CHECKSUM := dfa4e8a4d7e4c6b69285e7e8833eeecd819987e1bdbe5baa6b6facd4420de916
 $(PKG)_SUBDIR   := $(PKG)-opensource-src-$($(PKG)_VERSION)
 $(PKG)_FILE     := $(PKG)-opensource-src-$($(PKG)_VERSION).tar.xz
-$(PKG)_URL      := https://download.qt.io/official_releases/qt/5.8/$($(PKG)_VERSION)/submodules/$($(PKG)_FILE)
+$(PKG)_URL      := https://download.qt.io/archive/qt/5.5/$($(PKG)_VERSION)/submodules/$($(PKG)_FILE)
 $(PKG)_DEPS     := gcc dbus fontconfig freetds freetype harfbuzz jpeg libmysqlclient libpng openssl pcre postgresql sqlite zlib
 
 define $(PKG)_UPDATE
@@ -30,7 +30,6 @@ define $(PKG)_BUILD
         PKG_CONFIG_LIBDIR="$(PREFIX)/$(TARGET)/lib/pc" \
         ./configure \
             -opensource \
-            -c++std c++11 \
             -confirm-license \
             -xplatform win32-g++ \
             -device-option CROSS_COMPILE=${TARGET}- \
