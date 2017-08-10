@@ -46,24 +46,9 @@ define $(PKG)_BUILD
         --enable-gpl \
         --enable-version3 \
         --extra-libs='-mconsole' \
-        --enable-avisynth \
-        --enable-gnutls \
-        --enable-libass \
-        --enable-libbluray \
-        --enable-libbs2b \
-        --enable-libcaca \
-        --enable-libmp3lame \
-        --enable-libopencore-amrnb \
-        --enable-libopencore-amrwb \
-        --enable-libopus \
-        --enable-libspeex \
-        --enable-libtheora \
-        --enable-libvidstab \
-        --enable-libvo-amrwbenc \
         --enable-libvorbis \
-        --enable-libvpx \
-        --enable-libx264 \
-        --enable-libxvid
+        --enable-libx264
+
     $(MAKE) -C '$(1)' -j '$(JOBS)'
     $(MAKE) -C '$(1)' -j 1 install
 endef
